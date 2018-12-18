@@ -9,7 +9,6 @@
 .settings
 .springBeans
 .sts4-cache
-application.properties
 
 ### IntelliJ IDEA ###
 .idea
@@ -24,3 +23,5 @@ application.properties
 /dist/
 /nbdist/
 /.nb-gradle/
+
+src/main/resources/application.properties
