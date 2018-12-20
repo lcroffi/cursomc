@@ -7,32 +7,34 @@ public enum EstadoPagamento {
 	CANCELADO(3, "Cancelado");
 	
 	private int cod;
-	private String desc;
+	private String descricao;
 	
-	private EstadoPagamento(int cod, String desc) {
+	private EstadoPagamento(int cod, String descricao) {
 		this.cod = cod;
-		this.desc = desc;
+		this.descricao = descricao;
 	}
-
+	
 	public int getCod() {
 		return cod;
 	}
-
-	public String getDesc() {
-		return desc;
+	
+	public String getDescricao () {
+		return descricao;
 	}
 	
-	public static EstadoPagamento toEnum(Integer id) {
-
-		if (id == null) {
+	public static EstadoPagamento toEnum(Integer cod) {
+		
+		if (cod == null) {
 			return null;
 		}
+		
 		for (EstadoPagamento x : EstadoPagamento.values()) {
-			if (id.equals(x.getCod())) {
+			if (cod.equals(x.getCod())) {
 				return x;
 			}
 		}
-		throw new IllegalArgumentException("Id inválido " + id);
+		
+		throw new IllegalArgumentException("Id inválido: " + cod);
 	}
 
 }
